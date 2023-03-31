@@ -1,0 +1,19 @@
+{
+  "name": "legion-vodka",
+  "version": "1.0.0",
+  "description": "legion vodka slack bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatih-comeon/legion-vodka.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatih-comeon/legion-vodka/issues"
+  },
+  "homepage": "https://github.com/fatih-comeon/legion-vodka#readme"
+}
