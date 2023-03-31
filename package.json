@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fatih-comeon/legion-vodka/issues"
   },
-  "homepage": "https://github.com/fatih-comeon/legion-vodka#readme"
+  "homepage": "https://github.com/fatih-comeon/legion-vodka#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
