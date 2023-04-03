@@ -20,7 +20,6 @@
   "dependencies": {
     "@google-cloud/secret-manager": "^4.2.1",
     "botbuilder-adapter-slack": "^1.0.14",
-    "botkit": "^4.15.0",
-    "express": "^4.18.2"
+    "botkit": "^4.15.0"
   }
 }
