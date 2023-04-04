@@ -11,8 +11,6 @@ const { SecretManagerServiceClient } = require('@google-cloud/secret-manager')
 async function accessSecretVersion (name) {
   const client = new SecretManagerServiceClient()
   const projectId = process.env.K_SERVICE
-  console.log(projectId);
-  console.log(process.env);
   const [version] = await client.accessSecretVersion({
     name: `projects/${projectId}/secrets/${name}/versions/1`
   })
@@ -27,10 +25,9 @@ async function accessSecretVersion (name) {
  * Asynchronous function to initialize bot.
  */
 async function botInit () {
-  console.log("init");
   const adapter = new SlackAdapter({
     clientSigningSecret: await accessSecretVersion('client-signing-secret'),
-    botToken: await accessSecretVersion('bot-token')
+    clientSecret: await accessSecretVersion('bot-token')
   })
 
   adapter.use(new SlackEventMiddleware())
@@ -39,8 +36,6 @@ async function botInit () {
     webhook_uri: '/vodka',
     adapter: adapter
   })
-
-  console.log(controller);
 
   controller.ready(() => {
     console.log("bot ready");
