@@ -27,7 +27,7 @@ async function accessSecretVersion (name) {
 async function botInit () {
   const adapter = new SlackAdapter({
     clientSigningSecret: await accessSecretVersion('client-signing-secret'),
-    clientSecret: await accessSecretVersion('bot-token')
+    botToken: await accessSecretVersion('bot-token')
   })
 
   adapter.use(new SlackEventMiddleware())
