@@ -10,7 +10,7 @@ const { SecretManagerServiceClient } = require('@google-cloud/secret-manager')
  */
 async function accessSecretVersion (name) {
   const client = new SecretManagerServiceClient()
-  const projectId = process.env.PROJECT_ID
+  const projectId = process.env.GOOGLE_CLOUD_PROJECT
   const [version] = await client.accessSecretVersion({
     name: `projects/${projectId}/secrets/${name}/versions/1`
   })
