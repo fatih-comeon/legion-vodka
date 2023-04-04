@@ -4,9 +4,9 @@ FROM node:18.15.0-alpine
 # Install app dependencies.
 COPY package.json /src/package.json
 WORKDIR /src
-RUN npm install
+RUN yarn
 
 # Bundle app source.
-COPY kittenbot.js /src
+COPY index.js /src
 
 CMD ["node", "index"]
