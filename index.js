@@ -43,7 +43,7 @@ async function botInit () {
       console.log(message);
       const params = message.text.split[' '];
 
-      bot.replyPublic(`You typed ${message}`);
+      bot.replyPublic(message, `Your command was ${message.command}, your text was ${message.text}`);
     })
   })
 }
