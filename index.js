@@ -51,6 +51,7 @@ async function botInit () {
           break;
         }
         case 'list':
+          bot.replyPublic(message, `You used the list command`);
           break;
         default:
           bot.replyPublic(message, `You said "${message.text}" but I don't understand that`);
