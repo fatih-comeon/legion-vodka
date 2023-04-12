@@ -40,10 +40,22 @@ async function botInit () {
   controller.ready(() => {
     console.log("bot ready");
     controller.on('slash_command', async(bot, message) => {
-      console.log(message);
       const params = message.text.split[' '];
+      const type = params[0];
 
-      bot.replyPublic(message, `Your command was ${message.command}, your text was ${message.text}`);
+      switch (type) {
+        case 'buy': {
+          const buyer = params[1];
+          const vodka = message.text.replace(type, '').replace(buyer, '').trim();
+          bot.replyPublic(message, `${buyer} bought ${vodka} on ${new Date().toLocaleDateString()}`);
+          break;
+        }
+        case 'list':
+          break;
+        default:
+          bot.replyPublic(message, `You said "${message.text}" but I don't understand that`);
+          break;
+      }
     })
   })
 }
