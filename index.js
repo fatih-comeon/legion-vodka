@@ -47,7 +47,7 @@ async function botInit () {
         case 'buy': {
           const buyer = params[1];
           const vodka = message.text.replace(type, '').replace(buyer, '').trim();
-          bot.replyPublic(message, `${buyer} bought ${vodka} on ${new Date().toLocaleDateString()}`);
+          bot.replyPublic(message, `${buyer} bought ${vodka} on ${new Date().toLocaleDateString("en-GB")}`);
           break;
         }
         case 'list':
