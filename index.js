@@ -40,7 +40,7 @@ async function botInit () {
   controller.ready(() => {
     console.log("bot ready");
     controller.on('slash_command', async(bot, message) => {
-      const params = message.text.split[' '];
+      const params = message.text.split(' ');
       const type = params[0];
 
       switch (type) {
